@@ -1,17 +1,68 @@
+
 <h1>Seaching for - <%= @search_term %></h1>
 
-<table border="1">
-    <tr>
-        <th>Job Title</th>
-        <th>Company</th>
-        <th>Locatiotn</th>
-        <th>Date</th>
-    </tr>
-    <% @dice_jobs.each do |job| %>
-        <tr>
-            <td><%= job["jobTitle"] %></td>
-            <td><%= job["company"] %></td>
-            <td><%= job["location"] %></td>
-            <td><%= job["date"] %></td>
-    <% end %>
-</table>
+<script>
+
+/* Create the GeoJSON objects */
+
+var geojson_jobs = {
+  "type": "FeatureCollection",
+  "features" : [
+<% @dice_jobs.each do |job| %>
+  <% scs = split_city_state job["location"] %>
+  <% city_loc = find_coordinates(scs[0],scs[1]) %>
+  <%  if city_loc.nil? then city_loc = find_coordinates("Not Found", "US") end %>
+  {
+   "type" : "Feature",
+   "properties": {
+     "show_on_map" : true,
+      "name" : "<%= job["jobTitle"] %>",
+      "company" : "<%= job["company"] %>",
+      "city" : "<%= job["location"] %>",
+      "date" : "<%= job["date"] %>",
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ <%= city_loc.long %>, <%= city_loc.lat %> ]
+    }
+  },
+<% end %>
+]};
+
+</script>
+<script>
+
+function onEachFeature(feature, layer) {
+  var popupContent = "";
+
+  if (feature.properties) {
+    popupContent += feature.properties.name + "<br>";
+    popupContent += feature.properties.company + "<br>";
+    popupContent += feature.properties.city + "<br>";
+    popupContent += feature.properties.date + "<br>";
+  }
+
+
+  layer.bindPopup(popupContent);
+}
+
+L.geoJSON(geojson_jobs, {
+
+  onEachFeature: onEachFeature,
+
+    pointToLayer: function(feature, latlng) {
+      console.log("feature")
+        return L.circleMarker(latlng, {
+            radius: 8,
+            fillColor: "#0080FF",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        });
+    }
+
+}).addTo(map);
+console.log(geojson_jobs);
+
+</script>
