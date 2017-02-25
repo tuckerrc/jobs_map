@@ -17,6 +17,7 @@ var geojson_jobs = {
    "properties": {
      "show_on_map" : true,
       "name" : "<%= job["jobTitle"] %>",
+      "link" : "<%= job["detailUrl"] %>",
       "company" : "<%= job["company"] %>",
       "city" : "<%= job["location"] %>",
       "date" : "<%= job["date"] %>",
@@ -36,7 +37,7 @@ function onEachFeature(feature, layer) {
   var popupContent = "";
 
   if (feature.properties) {
-    popupContent += feature.properties.name + "<br>";
+    popupContent += "<a href='" + feature.properties.link + "'>" + feature.properties.name + "</a><br>";
     popupContent += feature.properties.company + "<br>";
     popupContent += feature.properties.city + "<br>";
     popupContent += feature.properties.date + "<br>";
@@ -46,7 +47,7 @@ function onEachFeature(feature, layer) {
   layer.bindPopup(popupContent);
 }
 var markers = L.markerClusterGroup({
-  spiderfyDistanceMultiplier: 3,
+  spiderfyDistanceMultiplier: 2,
 
 });
 
@@ -60,7 +61,7 @@ var geoJsonLayer = L.geoJSON(geojson_jobs, {
             fillColor: "#0080FF",
             color: "#000",
             weight: 1,
-            opacity: 1,
+            opacity: 0.75,
             fillOpacity: 0.8
         });
     }
