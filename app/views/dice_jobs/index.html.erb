@@ -1,6 +1,13 @@
 
 <h1>Seaching for - <%= @search_term %></h1>
 
+<%= form_tag action: 'index' do %>
+  <p>New Search Term:
+  <%= text_field_tag 'search', @search_term %></p>
+  <%= submit_tag "Search" %>
+
+<% end %>
+
 <script>
 
 /* Create the GeoJSON objects */
