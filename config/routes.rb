@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static/pages'
+
+  get 'static/index'
+
   get 'stack_jobs/index' => "stack_jobs#index"
   post 'stack_jobs/index' => "stack_jobs#index"
 
