@@ -1,5 +1,5 @@
 module CitiesHelper
   def find_coordinates(city, state)
-    lat = City.find_by name: city, state: state
+    City.where("lower(name) = ? and lower(state) = ?",city.downcase, state.downcase).first
   end
 end

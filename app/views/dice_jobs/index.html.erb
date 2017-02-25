@@ -11,7 +11,7 @@ var geojson_jobs = {
 <% @dice_jobs.each do |job| %>
   <% scs = split_city_state job["location"] %>
   <% city_loc = find_coordinates(scs[0],scs[1]) %>
-  <%  if city_loc.nil? then city_loc = find_coordinates("Not Found", "US") end %>
+  <%  if city_loc.nil? then city_loc = find_coordinates("not found", "us") end %>
   {
    "type" : "Feature",
    "properties": {
