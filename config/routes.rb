@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'stack_jobs/index'
+  get 'stack_jobs/index' => "stack_jobs#index"
+  post 'stack_jobs/index' => "stack_jobs#index"
 
   get 'dice_jobs/index' => "dice_jobs#index"
   post 'dice_jobs/index' => "dice_jobs#index"

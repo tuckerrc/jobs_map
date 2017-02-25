@@ -1,6 +1,6 @@
 class StackJobsController < ApplicationController
   def index
-    @search_term
-    @stack_jobs = StackJob.for(@seach_term)
+    @search_term = params[:search] || 'ruby on rails'
+    @stack_jobs = StackJob.for @search_term
   end
 end

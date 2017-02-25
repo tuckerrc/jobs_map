@@ -44,7 +44,7 @@ function onEachFeature(feature, layer) {
   var popupContent = "";
 
   if (feature.properties) {
-    popupContent += "<a href='" + feature.properties.link + "'>" + feature.properties.name + "</a><br>";
+    popupContent += "<a href='" + feature.properties.link + "' target='_blank'>" + feature.properties.name + "</a><br>";
     popupContent += feature.properties.company + "<br>";
     popupContent += feature.properties.city + "<br>";
     popupContent += feature.properties.date + "<br>";
