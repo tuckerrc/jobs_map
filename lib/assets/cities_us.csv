@@ -1649,6 +1649,7 @@ nanuet,41.08871,-74.01347,us,ny
 new city,41.1476,-73.98931,us,ny
 new rochelle,40.91149,-73.78235,us,ny
 new york city,40.71427,-74.00597,us,ny
+new york,40.71427,-74.00597,us,ny
 newburgh,41.50343,-74.01042,us,ny
 niagara falls,43.0945,-79.05671,us,ny
 north amityville,40.6976,-73.42512,us,ny
@@ -5407,3 +5408,141 @@ west greenwich,41.637,-71.66004,us,ri
 castle pines north,39.47174,-104.89482,us,co
 notre dame,41.70019,-86.23793,us,in
 elmendorf air force base,61.25703,-149.63139,us,ak
+herndon,38.969732,-77.383871,us,va
+richmond,37.540759,-77.433932,us,va
+gilbertsville,40.319737,-75.610076,us,pa
+reston,38.960186,-77.354497,us,va
+flanders,40.85062,-74.704934,us,nj
+erlton,39.916361,-75.02079,us,nj
+belcoville,39.416588,-74.660023,us,nj
+bradevelt,40.32691,-74.266864,us,nj
+franklinville,39.659577,-75.033685,us,nj
+auburn,39.745695,-75.354712,us,nj
+hillsborough,40.4634,-74.633758,us,nj
+hillsborough,40.462016,-74.627757,us,nj
+lebanon,40.670379,-74.839106,us,nj
+montague,41.262093,-74.776107,us,nj
+westborough,42.26697,-71.61575,us,ma
+belcamp,39.468899,-76.233597,us,md
+annapolis junction,39.125599,-76.788803,us,md
+sterling,39.001663,-77.40325,us,va
+westwood hills,39.038655,-94.608985,us,ks
+midlothian,37.503672,-77.651735,us,va
+mclean,38.937593,-77.183779,us,va
+vienna,38.903484,-77.262818,us,va
+lutherville timonium,39.426296,-76.612943,us,md
+alexandria,38.804665,-77.043614,us,va
+east syracuse,43.063993,-76.071072,us,ny
+horsham,40.182846,-75.137135,us,pa
+richardson,32.960761,-96.733518,us,tx
+state college,40.785422,-77.820985,us,pa
+downingtown,40.037163,-75.673347,us,pa
+wayne,40.057028,-75.389292,us,pa
+ithan,40.028093,-75.362596,us,pa
+wayne,40.06521,-75.392646,us,pa
+wayne,40.056071,-75.388394,us,pa
+spry,39.921239,-76.692569,us,pa
+pgh,40.461613,-79.998556,us,pa
+wayne,40.066328,-75.395603,us,pa
+bryn mawr,40.021566,-75.309203,us,pa
+manassas,38.750771,-77.475089,us,va
+manakin-sabot,37.601398,-77.702499,us,va
+manakin sabot,37.6381,-77.7078,us,va
+tampa,27.849953,-82.482676,us,fl
+ft myers beach,26.442383,-81.927324,us,fl
+boulder,40.047429,-105.246455,us,co
+cleveland,41.353298,-81.71568,us,oh
+farragut,35.88081,-84.046457,us,tn
+las vegas,36.145903,-115.042004,us,nv
+rancho mirage,33.770215,-116.393318,us,ca
+frisco,33.140793,-96.891631,us,tx
+plantation,26.114548,-80.303513,us,fl
+oldsmar,28.034767,-82.67262,us,fl
+south sioux city,42.469835,-96.413981,us,ne
+teterboro,40.86598,-74.054438,us,nj
+centreville,38.840081,-77.423164,us,va
+centreville,38.047501,-77.8172,us,va
+san antonio,29.425173,-98.494599,us,tx
+menands,42.691848,-73.724597,us,ny
+norfolk,36.846164,-76.285913,us,va
+sugar land,29.597075,-95.620971,us,tx
+charlottesville,38.031046,-78.474159,us,va
+ridge,40.893729,-72.89626,us,ny
+ridge,42.676102,-77.913597,us,ny
+exton,40.032966,-75.63154,us,pa
+exeter,42.981659,-70.950645,us,nh
+powell,40.158024,-83.075182,us,oh
+powell,40.305801,-81.701897,us,oh
+plano,33.019695,-96.697586,us,tx
+fairfax,38.847183,-77.306292,us,va
+bedford,41.393876,-81.534817,us,oh
+bedford,39.146426,-82.02369,us,oh
+bedford,40.269077,-82.046875,us,oh
+vienna,38.905364,-77.240628,us,va
+maclean,38.9257,-77.223278,us,va
+maclean,38.933093,-77.203118,us,va
+orange,38.176891,-78.017339,us,va
+vienna,38.922129,-77.252237,us,va
+gainesville,38.783608,-77.655271,us,va
+vienna,38.914022,-77.237484,us,va
+berwyn,40.045179,-75.441214,us,pa
+ventura,34.280832,-119.293107,us,ca
+sperryville,38.656082,-78.224491,us,va
+newport news,36.977714,-76.430349,us,va
+hartford,43.660986,-72.340165,us,vt
+jericho,40.788332,-73.535755,us,ny
+jericho,44.794201,-73.663101,us,ny
+jericho,40.954201,-72.204201,us,ny
+moonachie,40.841371,-74.046286,us,nj
+washington,38.892062,-77.019912,us,dc
+arlington,38.890763,-77.084755,us,va
+flanders,40.85062,-74.704934,us,nj
+erlton,39.916361,-75.02079,us,nj
+belcoville,39.416588,-74.660023,us,nj
+bradevelt,40.32691,-74.266864,us,nj
+franklinville,39.659577,-75.033685,us,nj
+auburn,39.745695,-75.354712,us,nj
+hillsborough,40.4634,-74.633758,us,nj
+hillsborough,40.462016,-74.627757,us,nj
+lebanon,40.670379,-74.839106,us,nj
+montague,41.262093,-74.776107,us,nj
+mayfield,41.538911,-81.439732,us,oh
+mayfield,39.494701,-84.372803,us,oh
+ipswich,42.680049,-70.837515,us,ma
+lake forest,33.665387,-117.686119,us,ca
+lake forest,39.184399,-120.113602,us,ca
+lutherville timonium,39.426296,-76.612943,us,md
+state college,40.785422,-77.820985,us,pa
+downingtown,40.037163,-75.673347,us,pa
+wayne,40.057028,-75.389292,us,pa
+ithan,40.028093,-75.362596,us,pa
+wayne,40.06521,-75.392646,us,pa
+wayne,40.056071,-75.388394,us,pa
+spry,39.921239,-76.692569,us,pa
+pgh,40.461613,-79.998556,us,pa
+wayne,40.066328,-75.395603,us,pa
+bryn mawr,40.021566,-75.309203,us,pa
+mullica hill,39.739969,-75.224855,us,nj
+tampa,27.849953,-82.482676,us,fl
+ft myers beach,26.442383,-81.927324,us,fl
+boulder,40.047429,-105.246455,us,co
+cleveland,41.353298,-81.71568,us,oh
+farragut,35.88081,-84.046457,us,tn
+las vegas,36.145903,-115.042004,us,nv
+rancho mirage,33.770215,-116.393318,us,ca
+frisco,33.140793,-96.891631,us,tx
+plantation,26.114548,-80.303513,us,fl
+oldsmar,28.034767,-82.67262,us,fl
+malvern,40.033434,-75.512711,us,pa
+wyncote,40.094763,-75.149181,us,pa
+yardley,40.242511,-74.838988,us,pa
+vienna,38.905364,-77.240628,us,va
+maclean,38.9257,-77.223278,us,va
+maclean,38.933093,-77.203118,us,va
+orange,38.176891,-78.017339,us,va
+vienna,38.922129,-77.252237,us,va
+gainesville,38.783608,-77.655271,us,va
+vienna,38.914022,-77.237484,us,va
+sandy,40.569705,-111.897282,us,ut
+piscataway township,40.551683,-74.474819,us,nj
+not found,29.859862,-71.684817,us,us
