@@ -32,4 +32,5 @@ html, body, #map{
 .search_box{
   position: absolute;
   bottom: 0;
+  z-index: 10000;
 }
