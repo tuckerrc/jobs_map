@@ -19,6 +19,9 @@
 
     <%= yield %>
 
-    <script> 		map.fitBounds(markers.getBounds()); </script>
+    <script>
+      map.fitBounds(markers.getBounds());
+      new L.Control.Zoom({position: 'bottomright' }).addTo(map);
+    </script>
   </body>
 </html>

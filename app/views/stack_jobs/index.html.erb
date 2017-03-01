@@ -1,17 +1,15 @@
 <div id="map"></div>
 <div class="search_box">
-<h1>Seaching for - <%= @search_term %></h1>
-
-<%= form_tag action: 'index' do %>
-  <p>New Search Term:
-  <%= text_field_tag 'search', @search_term %></p>
-  <%= submit_tag "Search" %>
-
-<% end %>
+  <%= form_tag action: 'index' do %>
+    <div> Search:
+      <%= text_field_tag 'search', @search_term %>
+      <%= submit_tag "Search" %>
+    </div>
+  <% end %>
 
 </div>
 <script>
-var map = L.map('map')
+var map = L.map('map', { zoomControl: false });
 
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
