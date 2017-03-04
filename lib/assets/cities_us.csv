@@ -240,6 +240,7 @@ ruskin,27.72086,-82.43315,us,fl
 safety harbor,27.99085,-82.69316,us,fl
 saint cloud,28.2489,-81.28118,us,fl
 st. petersburg,27.77086,-82.67927,us,fl
+saint petersburg,27.77086,-82.67927,us,FL
 san carlos park,26.4673,-81.80147,us,fl
 sanford,28.80055,-81.27312,us,fl
 sarasota,27.33643,-82.53065,us,fl
@@ -5466,7 +5467,7 @@ san antonio,29.425173,-98.494599,us,tx
 menands,42.691848,-73.724597,us,ny
 norfolk,36.846164,-76.285913,us,va
 sugar land,29.597075,-95.620971,us,tx
-charlottesville,38.031046,-78.474159,us,va
+charlottesville,38.029306,-78.476678,us,va
 ridge,40.893729,-72.89626,us,ny
 ridge,42.676102,-77.913597,us,ny
 exton,40.032966,-75.63154,us,pa
@@ -5545,4 +5546,8 @@ gainesville,38.783608,-77.655271,us,va
 vienna,38.914022,-77.237484,us,va
 sandy,40.569705,-111.897282,us,ut
 piscataway township,40.551683,-74.474819,us,nj
+princeton,40.357298,40.357298,us,nj
+tysons,38.918722,-77.231092,us,va
+lutherville-timonium,39.437051,-76.619691,us,md
+saint petersburg,,,us,FL
 not found,29.859862,-71.684817,us,us
