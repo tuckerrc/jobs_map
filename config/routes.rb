@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'static#index'
+  root to: 'stack_jobs#index', via: [:get, :post] 
   get 'static/pages'
 
   get 'static/index'
