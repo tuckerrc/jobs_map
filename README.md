@@ -8,3 +8,11 @@ Currently the app is a work in progress but it is hosted on [Heroku](https://www
 # New Locations
 
 Any city not know by the app will show up near the Bermuda Triangle.  Add an issue for any cities that you see mapped near the Bermuda Triangle.
+
+
+# TODO
+
+- Advanced Search abilities
+- Summary in Map popup
+- Animations for search box
+- Instructions for how to use the map
