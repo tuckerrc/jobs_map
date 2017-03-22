@@ -1,52 +1,56 @@
 <div id="map"></div>
 <div class="search_box">
-  <%= form_tag action: 'index' do %>
-    <div> Search:
-	<%= text_field_tag 'search', @search_term, placeholder: "Search..." %><br>
-	Min Exp: 
-	<%= text_field_tag 'min', @min_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
-	Max Exp: 
-	<%= text_field_tag 'max', @max_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
-	Job Type: 
-	<%= text_field_tag 'type', @job_type,  placeholder: 'Permanent, Contract, Internship' %><br>
-      <%= submit_tag "Search" %>
-    </div>
-  <% end %>
+    <%= form_tag action: 'index' do %>
+	<div> Search: 
+	    <%= text_field_tag 'search', @search_term, placeholder: "Search..." %>
+	    <%= submit_tag "Search" %> <br>
+	    <span class="advanced-option-toggle">+ Advanced Options</span><br>
+	    <span class="advanced-search hide">
+		Min Exp: 
+		<%= text_field_tag 'min', @min_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
+		Max Exp: 
+		<%= text_field_tag 'max', @max_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
+		Job Type: 
+		<%= text_field_tag 'type', @job_type,  placeholder: 'Permanent, Contract, Internship' %><br>
+	    </span>
+
+	</div>
+    <% end %>
 
 </div>
 <script>
-var map = L.map('map', { zoomControl: false });
+ var map = L.map('map', { zoomControl: false });
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+ }).addTo(map);
 
-/* Create the GeoJSON objects */
+ /* Create the GeoJSON objects */
 
-var geojson_jobs = {
-  "type": "FeatureCollection",
-  "features" : [
-<% @stack_jobs.each do |job| %>
-  <% scs = split_city_state job["location"] %>
-  <% city_loc = find_coordinates(scs[0],scs[1]) %>
-  <%  if city_loc.nil? then city_loc = find_coordinates("not found", "us") end %>
-  {
-   "type" : "Feature",
-   "properties": {
-     "show_on_map" : true,
-      "name" : "<%= job["title"] %>",
-      "link" : "<%= job["link"] %>",
-      "company" : "<%= job["author"]["name"] %>",
-      "city" : "<%= job["location"] %>",
-      "date" : "<%= job["pubDate"] %>",
-    },
-    "geometry" : {
-      "type" : "Point",
-      "coordinates" : [ <%= city_loc.long %>, <%= city_loc.lat %> ]
-    }
-  },
-<% end unless @stack_jobs.blank? %>
-  ]};
+ var geojson_jobs = {
+     "type": "FeatureCollection",
+     "features" : [
+	 <% @stack_jobs.each do |job| %>
+	 <% scs = split_city_state job["location"] %>
+	 <% city_loc = find_coordinates(scs[0],scs[1]) %>
+	 <%  if city_loc.nil? then city_loc = find_coordinates("not found", "us") end %>
+	 {
+	     "type" : "Feature",
+	     "properties": {
+		 "show_on_map" : true,
+		 "name" : "<%= job["title"] %>",
+		 "link" : "<%= job["link"] %>",
+		 "company" : "<%= job["author"]["name"] %>",
+		 "city" : "<%= job["location"] %>",
+		 "date" : "<%= job["pubDate"] %>",
+	     },
+	     "geometry" : {
+		 "type" : "Point",
+		 "coordinates" : [ <%= city_loc.long %>, <%= city_loc.lat %> ]
+	     }
+	 },
+	 <% end unless @stack_jobs.blank? %>
+     ]};
 
  <% if @stack_jobs.blank?  %>
 
@@ -56,44 +60,50 @@ var geojson_jobs = {
 </script>
 <script>
 
-function onEachFeature(feature, layer) {
-  var popupContent = "";
+ function onEachFeature(feature, layer) {
+     var popupContent = "";
 
-  if (feature.properties) {
-    popupContent += "<a href='" + feature.properties.link + "' target='_blank'>" + feature.properties.name + "</a><br>";
-    popupContent += feature.properties.company + "<br>";
-    popupContent += feature.properties.city + "<br>";
-    popupContent += feature.properties.date + "<br>";
-  }
+     if (feature.properties) {
+	 popupContent += "<a href='" + feature.properties.link + "' target='_blank'>" + feature.properties.name + "</a><br>";
+	 popupContent += feature.properties.company + "<br>";
+	 popupContent += feature.properties.city + "<br>";
+	 popupContent += feature.properties.date + "<br>";
+     }
 
 
-  layer.bindPopup(popupContent);
-}
-var markers = L.markerClusterGroup({
-  spiderfyDistanceMultiplier: 2,
-  showCoverageOnHover: false,
+     layer.bindPopup(popupContent);
+ }
+ var markers = L.markerClusterGroup({
+     spiderfyDistanceMultiplier: 2,
+     showCoverageOnHover: false,
 
-});
+ });
 
-var geoJsonLayer = L.geoJSON(geojson_jobs, {
+ var geoJsonLayer = L.geoJSON(geojson_jobs, {
 
-  onEachFeature: onEachFeature,
+     onEachFeature: onEachFeature,
 
-    pointToLayer: function(feature, latlng) {
-        return L.circleMarker(latlng, {
-            radius: 10,
-            fillColor: "#0080FF",
-            color: "#000",
-            weight: 1,
-            opacity: 0.75,
-            fillOpacity: 0.8
-        });
-    }
+     pointToLayer: function(feature, latlng) {
+         return L.circleMarker(latlng, {
+             radius: 10,
+             fillColor: "#0080FF",
+             color: "#000",
+             weight: 1,
+             opacity: 0.75,
+             fillOpacity: 0.8
+         });
+     }
 
-})
+ })
 
-markers.addLayer(geoJsonLayer);
-map.addLayer(markers);
-
+ markers.addLayer(geoJsonLayer);
+ map.addLayer(markers);
+ $(document).ready(function(){
+     console.log("ready");
+     $(".advanced-option-toggle").on("click", function() {
+	 $(".advanced-search").toggleClass("hide");
+	 console.log("clicked");
+     });
+ });
 
 </script>
