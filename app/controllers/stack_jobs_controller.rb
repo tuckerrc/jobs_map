@@ -1,6 +1,6 @@
 class StackJobsController < ApplicationController
   def index
-    @search_term = params[:search] || 'ruby on rails'
+    @search_term = params[:search] || '[ruby-on-rails]'
     @min_experience = params[:min] || ''
     @max_experience = params[:max] || ''
     @job_type = params[:type] || ''
