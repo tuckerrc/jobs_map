@@ -43,6 +43,14 @@
 		 "company" : "<%= job["author"]["name"] %>",
 		 "city" : "<%= job["location"] %>",
 		 "date" : "<%= job["pubDate"] %>",
+		 <% categories = job["category"].presence || ["none"] %>
+		 <% if categories.is_a?(Array)
+		     categories = categories
+		 else
+		     categories = [categories]
+
+		 end %>
+		 "category" : <%=  raw categories %>,
 	     },
 	     "geometry" : {
 		 "type" : "Point",
@@ -65,9 +73,10 @@
 
      if (feature.properties) {
 	 popupContent += "<a href='" + feature.properties.link + "' target='_blank'>" + feature.properties.name + "</a><br>";
-	 popupContent += feature.properties.company + "<br>";
-	 popupContent += feature.properties.city + "<br>";
-	 popupContent += feature.properties.date + "<br>";
+	 popupContent += "<strong>Company: </strong>" + feature.properties.company + "<br>";
+	 popupContent += "<strong>Location: </strong>" + feature.properties.city + "<br>";
+	 popupContent += "<strong>Posted: </strong>" + feature.properties.date + "<br>";
+	 popupContent += "<strong>Category: </strong>"+ feature.properties.category.join(", ") + "<br>";
      }
 
 
