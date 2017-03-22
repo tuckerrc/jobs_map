@@ -2,7 +2,13 @@
 <div class="search_box">
   <%= form_tag action: 'index' do %>
     <div> Search:
-      <%= text_field_tag 'search', @search_term %>
+	<%= text_field_tag 'search', @search_term, placeholder: "Search..." %><br>
+	Min Exp: 
+	<%= text_field_tag 'min', @min_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
+	Max Exp: 
+	<%= text_field_tag 'max', @max_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
+	Job Type: 
+	<%= text_field_tag 'type', @job_type,  placeholder: 'Permanent, Contract, Internship' %><br>
       <%= submit_tag "Search" %>
     </div>
   <% end %>
