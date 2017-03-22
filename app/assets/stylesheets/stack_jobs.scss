@@ -10,3 +10,12 @@
     margin-top: 10px;
     text-align: right;
 }
+
+.advanced-option-toggle{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.advanced-option-toggle:hover{
+    text-decoration: none;
+    color: gray;
+}
