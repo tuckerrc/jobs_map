@@ -44,12 +44,7 @@
 		 "city" : "<%= job["location"] %>",
 		 "date" : "<%= job["pubDate"] %>",
 		 <% categories = job["category"].presence || ["none"] %>
-		 <% if categories.is_a?(Array)
-		     categories = categories
-		 else
-		     categories = [categories]
-
-		 end %>
+		 <% categories.is_a?(Array) ? categories = categories : categories = [categories]  %>
 		 "category" : <%=  raw categories %>,
 	     },
 	     "geometry" : {
