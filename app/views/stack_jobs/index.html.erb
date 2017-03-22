@@ -45,9 +45,14 @@ var geojson_jobs = {
       "coordinates" : [ <%= city_loc.long %>, <%= city_loc.lat %> ]
     }
   },
-<% end %>
-]};
+<% end unless @stack_jobs.blank? %>
+  ]};
 
+ <% if @stack_jobs.blank?  %>
+
+ alert("No Jobs found try a new search")
+
+ <% end %>
 </script>
 <script>
 
