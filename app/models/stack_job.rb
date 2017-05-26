@@ -3,7 +3,7 @@ class StackJob
   require 'pp'
 
   def self.for( term, min_ex, max_ex, job_type )
-    url = "http://stackoverflow.com/jobs/feed?"\
+    url = "https://stackoverflow.com/jobs/feed?"\
           "q=#{term}"\
           "&ms=#{min_ex}"\
           "&mxs=#{max_ex}"\
