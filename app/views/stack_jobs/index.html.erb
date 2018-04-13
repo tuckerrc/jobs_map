@@ -27,39 +27,8 @@
 
  /* Create the GeoJSON objects */
 
- var geojson_jobs = {
-     "type": "FeatureCollection",
-     "features" : [
-	 <% @stack_jobs.each do |job| %>
-	 <% scs = split_city_state job["location"] %>
-	 <% city_loc = find_coordinates(scs[0],scs[1]) %>
-	 <%  if city_loc.nil? then city_loc = find_coordinates("not found", "us") end %>
-	 {
-	     "type" : "Feature",
-	     "properties": {
-		 "show_on_map" : true,
-		 "name" : "<%= job["title"] %>",
-		 "link" : "<%= job["link"] %>",
-		 "company" : "<%= job["author"]["name"] %>",
-		 "city" : "<%= job["location"] %>",
-		 "date" : "<%= job["pubDate"] %>",
-		 <% categories = job["category"].presence || ["none"] %>
-		 <% categories.is_a?(Array) ? categories = categories : categories = [categories]  %>
-		 "category" : <%=  raw categories %>,
-	     },
-	     "geometry" : {
-		 "type" : "Point",
-		 "coordinates" : [ <%= city_loc.long %>, <%= city_loc.lat %> ]
-	     }
-	 },
-	 <% end unless @stack_jobs.blank? %>
-     ]};
+var geojson_jobs = <%= puts @stack_jobs %>
 
- <% if @stack_jobs.blank?  %>
-
- alert("No Jobs found try a new search")
-
- <% end %>
 </script>
 <script>
 
