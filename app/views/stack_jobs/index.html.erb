@@ -27,7 +27,7 @@
 
  /* Create the GeoJSON objects */
 
-var geojson_jobs = <%= puts @stack_jobs %>
+var geojson_jobs = <%= raw @stack_jobs.to_geojson %>
 
 </script>
 <script>
