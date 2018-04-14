@@ -2,6 +2,7 @@ class StackJob
   attr_accessor :url, :xml, :geojson
 
   require 'active_support/core_ext/hash/conversions'
+  require 'open-uri'
   require 'city'
 
   def initialize( term, min_ex, max_ex, job_type )
