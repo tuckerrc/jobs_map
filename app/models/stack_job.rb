@@ -19,29 +19,34 @@ class StackJob
   def to_geojson
       hash = Hash.from_xml(@xml.to_s)
       items = hash['rss']['channel']['item']
-      json = '{ "type": "FeatureCollection","features" : ['
+      json = Hash.new
+      json["type"] = "FeatureCollection"
+      features = Array.new
       items.each do | item |
-          json << '{"type": "Feature",'
-          json << '"properties": {'
-          json << '"show_on_map" : true,'
-          json << '"name" : "' << item['title'] << '",'
-          json << '"link" : "' << item['link'] << '",'
-          json << '"company" : "' << item['author']['name'] << '",'
-          json << '"city" : "' << item['location'] << '",'
-          json << '"category": ["test"],'
-          json << '"date" : "' << item['pubDate'] << '"'
-
           scs = City.split_city_state item["location"]
           city_loc = City.find_coordinates(scs[0],scs[1])
           if city_loc.nil? then city_loc = City.find_coordinates("not found", "us") end
 
-          json << '}, "geometry": {"type": "Point",'
-          json << '"coordinates": [' << city_loc.long.to_s << ',' << city_loc.lat.to_s << ']'
-          json << '}},'
+          feature = { "type"           => "Feature",
+                      "properties"     => {
+                          "show_on_map"  => "true",
+                          "link"         => item['link'],
+                          "name"         => item['title'],
+                          "company"      => item['author']['name'],
+                          "city"         => item['location'],
+                          "category"     => ['test'],
+                          "date"         => item['pubDate']
+                         },
+                      "geometry"       => {
+                          "type"         => "Point",
+                          "coordinates"  => [ city_loc.long, city_loc.lat ]
+                         }
+                    }
+          features.push( feature )
+
       end
-      json = json[0...-1]
-      json << ']}'
-      @geojson = json
+      json["features"] = features
+      @geojson = json.to_json
       @geojson
   end
 end
