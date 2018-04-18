@@ -27,6 +27,9 @@ class StackJob
           city_loc = City.find_coordinates(scs[0],scs[1])
           if city_loc.nil? then city_loc = City.find_coordinates("not found", "us") end
 
+          categories = item['category'].presence || ["none"]
+          categories = ( categories.is_a?(Array) ) ? categories : Array(categories)
+
           feature = { "type"           => "Feature",
                       "properties"     => {
                           "show_on_map"  => "true",
@@ -34,7 +37,7 @@ class StackJob
                           "name"         => item['title'],
                           "company"      => item['author']['name'],
                           "city"         => item['location'],
-                          "category"     => ['test'],
+                          "category"     => categories,
                           "date"         => item['pubDate']
                          },
                       "geometry"       => {
