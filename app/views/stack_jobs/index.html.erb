@@ -12,6 +12,8 @@
 		<%= text_field_tag 'max', @max_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
 		Job Type: 
 		<%= text_field_tag 'type', @job_type,  placeholder: 'Permanent, Contract, Internship' %><br>
+		Remote:
+		<%= check_box_tag 'remote', "true", @remote %><br>
 	    </span>
 
 	</div>
@@ -38,7 +40,11 @@ var geojson_jobs = <%= raw @stack_jobs.to_geojson %>
      if (feature.properties) {
 	 popupContent += "<a href='" + feature.properties.link + "' target='_blank'>" + feature.properties.name + "</a><br>";
 	 popupContent += "<strong>Company: </strong>" + feature.properties.company + "<br>";
-	 popupContent += "<strong>Location: </strong>" + feature.properties.city + "<br>";
+   if (feature.properties.city){
+     popupContent += "<strong>Location: </strong>" + feature.properties.city + "<br>";
+   } else {
+     popupContent += "<strong>Location: </strong>No office location listed<br>";
+   }
 	 popupContent += "<strong>Posted: </strong>" + feature.properties.date + "<br>";
 	 popupContent += "<strong>Tags: </strong>"+ feature.properties.category.join(", ") + "<br>";
      }
