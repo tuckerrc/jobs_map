@@ -1,16 +1,16 @@
 <div id="map"></div>
 <div class="search_box">
     <%= form_tag action: 'index' do %>
-	<div> Search: 
+	<div> Search:
 	    <%= text_field_tag 'search', @search_term, placeholder: "Search..." %>
 	    <%= submit_tag "Search" %> <br>
 	    <span class="advanced-option-toggle">+ Advanced Options</span><br>
 	    <span class="advanced-search hide">
-		Min Exp: 
+		Min Exp:
 		<%= text_field_tag 'min', @min_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
-		Max Exp: 
+		Max Exp:
 		<%= text_field_tag 'max', @max_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
-		Job Type: 
+		Job Type:
 		<%= text_field_tag 'type', @job_type,  placeholder: 'Permanent, Contract, Internship' %><br>
 		Remote:
 		<%= check_box_tag 'remote', "true", @remote %><br>
