@@ -1,22 +1,33 @@
 <div id="map"></div>
 <div class="search_box">
     <%= form_tag action: 'index' do %>
-	<div> Search:
-	    <%= text_field_tag 'search', @search_term, placeholder: "Search..." %>
-	    <%= submit_tag "Search" %> <br>
-	    <span class="advanced-option-toggle">+ Advanced Options</span><br>
-	    <span class="advanced-search hide">
-		Min Exp:
-		<%= text_field_tag 'min', @min_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
-		Max Exp:
-		<%= text_field_tag 'max', @max_experience, placeholder: "Junior, MidLevel, Senior" %> <br>
-		Job Type:
-		<%= text_field_tag 'type', @job_type,  placeholder: 'Permanent, Contract, Internship' %><br>
-		Remote:
-		<%= check_box_tag 'remote', "true", @remote %><br>
-	    </span>
+    <div>
+        <div class="search-field">
+            <label for="search">Search:</label>
+            <%= text_field_tag 'search', @search_term, placeholder: "Search..." %>
+            <%= submit_tag "Search" %>
+        </div>
+        <div class="advanced-option-toggle">+ Advanced Options</div>
+        <div class="advanced-search hide">
+            <div class="form-field min-field">
+                <label for="min">Min Exp:</label>
+                <%= text_field_tag 'min', @min_experience, placeholder: "Junior, MidLevel, Senior" %>
+            </div>
+            <div class="form-field max-field">
+                <label for="max">Max Exp:</label>
+                <%= text_field_tag 'max', @max_experience, placeholder: "Junior, MidLevel, Senior" %>
+            </div>
+            <div class="form-field type-field">
+                <label for="type">Job Type:</label>
+                <%= text_field_tag 'type', @job_type,  placeholder: 'Permanent, Contract, Internship' %>
+            </div>
+            <div class="form-field remote-field">
+                <label for="remote">Remote:</label>
+                <%= check_box_tag 'remote', "true", @remote %>
+            </div>
+        </div>
 
-	</div>
+    </div>
     <% end %>
 
 </div>
