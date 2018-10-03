@@ -37,12 +37,17 @@ class StackJob
 
           categories = item['category'].presence || ["none"]
           categories = ( categories.is_a?(Array) ) ? categories : Array(categories)
+          title = item['title'].split(" at ")
+          remote = ""
+          if title.last.include? "allows remote"
+              title.first << " (allows remote)"
+          end
 
           feature = { "type"           => "Feature",
                       "properties"     => {
                           "show_on_map"  => "true",
                           "link"         => item['link'],
-                          "name"         => item['title'],
+                          "name"         => title.first,
                           "company"      => item['author']['name'],
                           "city"         => item['location'],
                           "category"     => categories,
