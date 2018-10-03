@@ -34,5 +34,17 @@ html, body, #map{
   top: 0;
   z-index: 10000;
   padding: 10px 20px;
-  background-color: lightgray;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 6px rgba( 0, 0, 0, 0.2);
+  border-bottom-right-radius: 3px;
+}
+
+.form-field,
+.search-field {
+    margin: 5px 10px;
+}
+
+.form-field label {
+    display: inline-block;
+    min-width: 100px;
 }
