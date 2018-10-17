@@ -47,6 +47,7 @@ var geojson_jobs = <%= raw @stack_jobs.to_geojson %>
 
  function onEachFeature(feature, layer) {
      var popupContent = "";
+     var pubDate = new Date(Date.parse(feature.properties.date));
 
      if (feature.properties) {
 	 popupContent += "<a href='" + feature.properties.link + "' target='_blank'>" + feature.properties.name + "</a><br>";
@@ -56,7 +57,7 @@ var geojson_jobs = <%= raw @stack_jobs.to_geojson %>
    } else {
      popupContent += "<strong>Location: </strong>No office location listed<br>";
    }
-	 popupContent += "<strong>Posted: </strong>" + feature.properties.date + "<br>";
+	 popupContent += "<strong>Posted: </strong>" + pubDate.toUTCString() + "<br>";
 	 popupContent += "<strong>Tags: </strong>"+ feature.properties.category.join(", ") + "<br>";
      }
 
@@ -73,6 +74,16 @@ var geojson_jobs = <%= raw @stack_jobs.to_geojson %>
 
      onEachFeature: onEachFeature,
 
+     style: function (feature) {
+         var today = new Date();
+         var weekDate = new Date().setDate(today.getDate()-7);
+         var pubDate = Date.parse(feature.properties.date);
+         var old = pubDate < weekDate;
+         if (old) {
+             return {fillColor: "grey"};
+        }
+        return {fillColor: "blue"}
+     },
      pointToLayer: function(feature, latlng) {
          return L.circleMarker(latlng, {
              radius: 10,

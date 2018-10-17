@@ -4,6 +4,7 @@ class StackJob
   require 'active_support/core_ext/hash/conversions'
   require 'open-uri'
   require 'city'
+  require 'date'
 
   def initialize( term, min_ex, max_ex, job_type, remote )
     @url = "https://stackoverflow.com/jobs/feed?"\
@@ -35,6 +36,8 @@ class StackJob
           end
           if city_loc.nil? then city_loc = City.find_coordinates("not found", "us") end
 
+          date = DateTime.parse(item['pubDate'])
+          dateFmt = date.strftime("%Y-%m-%dT%H:%M:%S")
           categories = item['category'].presence || ["none"]
           categories = ( categories.is_a?(Array) ) ? categories : Array(categories)
           title = item['title'].split(" at ")
@@ -51,7 +54,7 @@ class StackJob
                           "company"      => item['author']['name'],
                           "city"         => item['location'],
                           "category"     => categories,
-                          "date"         => item['pubDate']
+                          "date"         => dateFmt
                          },
                       "geometry"       => {
                           "type"         => "Point",
