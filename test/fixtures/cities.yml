@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  lat: 1.5
-  long: 1.5
-  country: MyString
-  state: MyString
+new_york:
+  name: new york
+  lat: 40.71427
+  long: -74.00597
+  country: us
+  state: ny
 
-two:
-  name: MyString
-  lat: 1.5
-  long: 1.5
-  country: MyString
-  state: MyString
+not_found:
+  name: not found
+  lat: 29.85
+  long: -71.68
+  country: us
+  state: us
