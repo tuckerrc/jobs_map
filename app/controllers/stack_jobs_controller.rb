@@ -6,6 +6,17 @@ class StackJobsController < ApplicationController
     @job_type = params[:type] || ''
     @remote = params[:remote] || nil
 
-    @stack_jobs = StackJob.new( @search_term, @min_experience, @max_experience, @job_type, @remote )
+    url = "https://stackoverflow.com/jobs/feed?"\
+          "q=#{@search_term}"\
+          "&ms=#{@min_experience}"\
+          "&mxs=#{@max_experience}"\
+          "&j=#{@job_type}"\
+          "&l=United%20States&d=20&u=Miles" # Currently the application only supports US
+    unless @remote.nil?
+      url << "&r=true"
+    end
+
+    xml = Nokogiri::XML(open(url))
+    @stack_jobs = StackJob.new(url, xml)
   end
 end

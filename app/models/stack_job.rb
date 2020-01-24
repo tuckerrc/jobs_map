@@ -1,23 +1,9 @@
 class StackJob
-  attr_accessor :url, :xml, :geojson
+  attr_accessor :url, :xml
 
-  require 'active_support/core_ext/hash/conversions'
-  require 'open-uri'
-  require 'city'
-  require 'date'
-
-  def initialize( term, min_ex, max_ex, job_type, remote )
-    @url = "https://stackoverflow.com/jobs/feed?"\
-          "q=#{term}"\
-          "&ms=#{min_ex}"\
-          "&mxs=#{max_ex}"\
-          "&j=#{job_type}"\
-          "&l=United%20States&d=20&u=Miles" # Currently the application only supports US
-    unless remote.nil?
-      @url << "&r=true"
-    end
-
-    @xml = Nokogiri::XML(open(url))
+  def initialize( url, xml )
+    @url = url
+    @xml = xml
     to_geojson
   end
 
@@ -41,7 +27,6 @@ class StackJob
           categories = item['category'].presence || ["none"]
           categories = ( categories.is_a?(Array) ) ? categories : Array(categories)
           title = item['title'].split(" at ")
-          remote = ""
           if title.last.include? "allows remote"
               title.first << " (allows remote)"
           end
@@ -66,6 +51,5 @@ class StackJob
       end
       json["features"] = features
       @geojson = json.to_json
-      @geojson
   end
 end
