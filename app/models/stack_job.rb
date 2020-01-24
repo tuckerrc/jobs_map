@@ -4,7 +4,6 @@ class StackJob
   def initialize( url, xml )
     @url = url
     @xml = xml
-    to_geojson
   end
 
   def to_geojson
