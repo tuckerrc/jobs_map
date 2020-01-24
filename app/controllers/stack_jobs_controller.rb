@@ -1,4 +1,5 @@
 class StackJobsController < ApplicationController
+  require 'open-uri'
   def index
     @search_term = params[:search] || '[ruby-on-rails]'
     @min_experience = params[:min] || ''
