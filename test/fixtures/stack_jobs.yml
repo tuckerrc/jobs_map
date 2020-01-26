@@ -1,15 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-   hash: MyString
-   url: MyString
-   xml: MyString
-   json: MyString
-   geo_json: Mystring
+test_jobs:
+   md5hash: 'c09fdc66d4b4c5dd1f8ee3e8e78558bd'
+   url: 'https://stackoverflow.com/jobs/feed?q=[ruby-on-rails]&ms=&mxs=&j=&l=United%20States&d=20&u=Miles'
+   xml: '<?xml version="1.0" encoding="utf-8"?><rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel xmlns:os="http://a9.com/-/spec/opensearch/1.1/"><title>[ruby-on-rails][ruby][javascript] jobs in City, ST, USA - Example</title><link>https://example.com/jobs</link><description>[ruby-on-rails][ruby][javascript] jobs in City, ST, USA - Example</description><image><url>http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d</url><title>[ruby-on-rails][ruby][javascript] jobs in City, ST, USA - Example</title><link>https://example.com/jobs</link></image><os:totalResults>1</os:totalResults><item><guid isPermaLink="false">347103</guid><link>https://example.com/link</link><a10:author><a10:name>Author</a10:name></a10:author><category>ruby</category><category>postgresql</category><category>javascript</category><category>ruby-on-rails</category><title>title (city, st)</title><description>description</description><pubDate>Mon, 06 Jan 2020 21:37:34 Z</pubDate><a10:updated>2020-01-06T21:37:34Z</a10:updated><location xmlns="http://example.com/jobs/">City, ST</location></item><item><guid isPermaLink="false">347103</guid><link>https://example.com/link</link><a10:author><a10:name>Author</a10:name></a10:author><category>ruby</category><category>postgresql</category><category>javascript</category><category>ruby-on-rails</category><title>title (city, st)</title><description>description</description><pubDate>Mon, 06 Jan 2020 21:37:34 Z</pubDate><a10:updated>2020-01-06T21:37:34Z</a10:updated><location xmlns="http://example.com/jobs/">City, ST</location></item></channel></rss>'
 
-two:
-   hash: MyString
-   url: MyString
-   xml: MyString
-   json: MyString
-   geo_json: Mystring
+
