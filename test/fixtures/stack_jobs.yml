@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+   hash: MyString
+   url: MyString
+   xml: MyString
+   json: MyString
+   geo_json: Mystring
+
+two:
+   hash: MyString
+   url: MyString
+   xml: MyString
+   json: MyString
+   geo_json: Mystring

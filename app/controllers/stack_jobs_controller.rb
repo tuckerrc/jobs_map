@@ -1,5 +1,8 @@
 class StackJobsController < ApplicationController
+
   require 'open-uri'
+  require 'digest'
+
   def index
     @search_term = params[:search] || '[ruby-on-rails]'
     @min_experience = params[:min] || ''
@@ -17,7 +20,18 @@ class StackJobsController < ApplicationController
       url << "&r=true"
     end
 
-    xml = Nokogiri::XML(open(url))
-    @stack_jobs = StackJob.new(url, xml)
+    url_md5 = Digest::MD5.hexdigest url
+
+    @stack_jobs = StackJob.find_by(md5hash: url_md5)
+    if @stack_jobs.blank?
+      xml = Nokogiri::XML(open(url))
+      @stack_jobs = StackJob.create(
+        md5hash: url_md5,
+        xml: xml,
+        url: url
+      )
+    end
+
+    @stack_jobs
   end
 end

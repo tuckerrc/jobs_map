@@ -1,13 +1,7 @@
-class StackJob
-  attr_accessor :url, :xml
-
-  def initialize( url, xml )
-    @url = url
-    @xml = xml
-  end
+class StackJob < ApplicationRecord
 
   def to_geojson
-      hash = Hash.from_xml(@xml.to_s)
+      hash = Hash.from_xml(self.xml)
       items = hash['rss']['channel']['item']
       json = Hash.new
       json["type"] = "FeatureCollection"
@@ -49,6 +43,8 @@ class StackJob
 
       end
       json["features"] = features
-      @geojson = json.to_json
+      self.geo_json = json.to_json
+      self.save
+      self.geo_json
   end
 end
