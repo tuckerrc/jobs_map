@@ -43,8 +43,6 @@ class StackJob < ApplicationRecord
 
       end
       json["features"] = features
-      self.geo_json = json.to_json
-      self.save
-      self.geo_json
+      json.to_json
   end
 end

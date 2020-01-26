@@ -30,6 +30,13 @@ class StackJobsController < ApplicationController
         xml: xml,
         url: url
       )
+      @stack_jobs.geo_json = @stack_jobs.to_geojson
+      @stack_jobs.save
+    elsif @stack_jobs.updated_at < (Time.now - 60.minutes)
+      xml = Nokogiri::XML(open(url))
+      @stack_jobs.xml = xml
+      @stack_jobs.geo_json = @stack_jobs.to_geojson
+      @stack_jobs.save
     end
 
     @stack_jobs
