@@ -17,6 +17,22 @@ class StackJobsController < ApplicationController
     @stack_jobs = get_stack_jobs(url)
   end
 
+  def search
+    args = {
+      :search =>  params[:search] || '[ruby-on-rails]',
+      :min_experience => params[:min] || '',
+      :max_experience => params[:max] || '',
+      :job_type => params[:type] || '',
+      :remote => params[:remote] || nil
+    }
+
+    url = stack_jobs_url(args)
+
+    @stack_jobs = get_stack_jobs(url)
+
+    render json: @stack_jobs.to_geojson
+  end
+
   private
     def get_stack_jobs(url)
       url_md5 = Digest::MD5.hexdigest url
