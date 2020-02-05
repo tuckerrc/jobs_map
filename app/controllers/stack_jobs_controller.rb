@@ -4,12 +4,18 @@ class StackJobsController < ApplicationController
   require 'digest'
 
   def index
+    @search_term = params[:search] || '[ruby-on-rails]'
+    @min_experience = params[:min] || ''
+    @max_experience = params[:max] || ''
+    @job_type = params[:type] || ''
+    @remote = params[:remote] || nil
+
     args = {
-      :search =>  params[:search] || '[ruby-on-rails]',
-      :min_experience => params[:min] || '',
-      :max_experience => params[:max] || '',
-      :job_type => params[:type] || '',
-      :remote => params[:remote] || nil
+      :search =>  @search_term,
+      :min_experience => @min_experience,
+      :max_experience => @max_experience,
+      :job_type => @job_type,
+      :remote => @remote
     }
 
     url = stack_jobs_url(args)
