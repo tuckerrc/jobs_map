@@ -31,7 +31,11 @@
     <% end %>
 
 </div>
-<script>
-  // TODO: Turn this into an ajax call
-var geojson_jobs = <%= raw @stack_jobs.geo_json %>
+<script type="text/javascript">
+  /* TODO: Turn this into an ajax call */
+  var geojson_jobs = <%= raw @stack_jobs.geo_json %>;
+  $(document).ready(function() {
+    stackJobs.leaflet.init();
+    stackJobs.leaflet.updateGeoJsonLayer(geojson_jobs);
+  });
 </script>
