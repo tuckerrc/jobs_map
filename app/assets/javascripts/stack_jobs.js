@@ -1,8 +1,8 @@
 var stackJobs = {};
 
 stackJobs.leaflet = function () {
-    var map
-    var markers
+    var map;
+    var markers;
     var geojsonLayer;
 
     var init = function() {
@@ -87,7 +87,7 @@ stackJobs.leaflet = function () {
 
     var publicObjects = {
         init: init,
-        updateGeoJsonLayer, updateGeoJsonLayer,
+        updateGeoJsonLayer: updateGeoJsonLayer,
     }
     return publicObjects;
 }();
