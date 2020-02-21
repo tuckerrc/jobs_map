@@ -1,7 +1,9 @@
 var stackJobs = {};
 
 stackJobs.leaflet = function () {
-    var map, markers, geojsonLayer;
+    var map
+    var markers
+    var geojsonLayer;
 
     var init = function() {
         map = L.map('map', { zoomControl: false });
