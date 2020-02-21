@@ -49,8 +49,8 @@ $('.search_box form').submit(function (e) {
       $('.search_box form input[type=submit]').removeAttr('disabled');
     })
     .catch(err => {
-      console.error('Something went wrong: ' + err)
       $('.search_box form input[type=submit]').removeAttr('disabled');
+      showToast('No jobs found. Try another search', 3000)
     })
 
 })

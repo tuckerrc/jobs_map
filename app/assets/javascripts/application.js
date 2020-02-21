@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function showToast(text, delay) {
+    var toast = $('#toast');
+    toast.html(text);
+    toast.addClass('show');
+    setTimeout(function() {
+        toast.removeClass('show');
+    }, delay)
+
+}
