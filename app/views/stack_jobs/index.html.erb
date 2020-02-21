@@ -43,12 +43,14 @@ $('.search_box form').submit(function (e) {
   e.preventDefault();
   var url = '/search?' + $('.search_box form').serialize();
   fetch(url)
-    .then(res => res.json())
-    .then(my_json => {
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function(my_json) {
       stackJobs.leaflet.updateGeoJsonLayer(my_json);
       $('.search_box form input[type=submit]').removeAttr('disabled');
     })
-    .catch(err => {
+    .catch(function(err) {
       $('.search_box form input[type=submit]').removeAttr('disabled');
       showToast('No jobs found. Try another search', 3000)
     })
