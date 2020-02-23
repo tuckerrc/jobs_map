@@ -47,13 +47,17 @@ $('.search_box form').submit(function (e) {
       return res.json();
     })
     .then(function(my_json) {
+      if (my_json.type == 'Error') {
+        throw new NoJobsFoundError(my_json);
+      }
       stackJobs.leaflet.updateGeoJsonLayer(my_json);
-      $('.search_box form input[type=submit]').removeAttr('disabled');
     })
     .catch(function(err) {
-      $('.search_box form input[type=submit]').removeAttr('disabled');
-      showToast('No jobs found. Try another search', 3000)
+      showToast(err.message, 3000)
     })
+    .finally(function() {
+      $('.search_box form input[type=submit]').removeAttr('disabled');
+    });
 
 })
 </script>

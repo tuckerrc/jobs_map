@@ -15,6 +15,11 @@
 //= require turbolinks
 //= require_tree .
 
+function NoJobsFoundError(error) {
+    this.name = "NoJobsFoundError";
+    this.message = error.message;
+}
+
 function showToast(text, delay) {
     var toast = $('#toast');
     toast.html(text);

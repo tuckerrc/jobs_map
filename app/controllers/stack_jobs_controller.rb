@@ -34,9 +34,17 @@ class StackJobsController < ApplicationController
 
     url = stack_jobs_url(args)
 
-    @stack_jobs = get_stack_jobs(url)
+    begin
+      @stack_jobs = get_stack_jobs(url)
+      if (@stack_jobs.geo_json.blank?)
+        render json: {"type": "Error", "message": "No jobs found. Try another search"}
+      else
+        render json: @stack_jobs.geo_json
+      end
+    rescue NoMethodError
+      render json: {"type": "Error", "message": "No jobs found. Try another search"}
+    end
 
-    render json: @stack_jobs.to_geojson
   end
 
   private
