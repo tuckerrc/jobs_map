@@ -24,9 +24,45 @@ jobs:
             - RAILS_ENV: test
             - RACK_ENV: test
           command: bundle exec rake test
-      - store_artifacts:
-          path: coverage
+      - persist_to_workspace:
+          root: /tmp/
+          paths: coverage
 
+  coverage:
+    docker:
+      - image: node:12
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /tmp/coverage
+      - run:
+          name: Disable jekyll builds
+          command: touch /tmp/coverage/.nojekyll
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "<>"
+            git config user.name "Snail Mail"
+      - add_ssh_keys:
+          fingerprints:
+            - "5e:4b:3b:fe:57:0a:e9:f0:16:6c:b8:30:4a:29:58:82"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist /tmp/coverage
+
+
+workflows:
+  version: 2
+  build_and_coverage:
+    jobs:
+      - build
+      - coverage
+        requires:
+          - build
+        filters:
+          branches:
+            only: master
 # What to do next? Set up a test job. Please see
 # https://circleci.com/docs/2.0/configuration-reference/, for more  info on how to get started.
 
