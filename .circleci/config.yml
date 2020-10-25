@@ -49,7 +49,7 @@ jobs:
             - "5e:4b:3b:fe:57:0a:e9:f0:16:6c:b8:30:4a:29:58:82"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist /tmp/coverage
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist ./coverage
 
 
 workflows:
