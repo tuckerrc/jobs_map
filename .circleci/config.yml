@@ -37,7 +37,7 @@ jobs:
           at: ./
       - run:
           name: Disable jekyll builds
-          command: touch /tmp/coverage/.nojekyll
+          command: touch ./coverage/.nojekyll
       - run:
           name: Install and configure dependencies
           command: |
