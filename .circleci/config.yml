@@ -25,8 +25,8 @@ jobs:
             - RACK_ENV: test
           command: bundle exec rake test
       - persist_to_workspace:
-          root: coverage
-          paths: coverage/*
+          root: *workspace_root
+          paths: coverage
 
   coverage:
     docker:
@@ -34,7 +34,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: coverage
+          at: *workspace_root
       - run:
           name: Disable jekyll builds
           command: touch /tmp/coverage/.nojekyll
