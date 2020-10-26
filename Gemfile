@@ -37,7 +37,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  gem "simplecov", require: false
+  gem 'simplecov', require: false
+  gem 'simplecov-small-badge', :require => false, :github => 'tuckerrc/simplecov-small-badge'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end

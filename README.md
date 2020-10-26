@@ -1,6 +1,7 @@
 # Stack Overflow Job Search Map
 
 [![CircleCI](https://circleci.com/gh/tuckerrc/jobs_map.svg?style=svg)](https://circleci.com/gh/tuckerrc/jobs_map)
+[![Coverage](https://tuckerrc.github.io/jobs_map/coverage_badge_total.svg)](https://tuckerrc.github.io/jobs_map/index.html)
 
 This is a Ruby on Rails app for job searching.  Jobs are pulled from [Stack Overflow](http://stackoverflow.com/jobs) job search RSS feeds.  City coordinates are from the [geonames.org](http://www.geonames.org/) database. The mapping is done using the [Leaflet.js](http://leafletjs.com/) mapping library.
 
