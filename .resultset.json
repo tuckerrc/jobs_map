@@ -11,52 +11,6 @@
           null
         ]
       },
-      "/home/circleci/project/app/admin/cities.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/circleci/project/app/models/city.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          5,
-          null,
-          null,
-          1,
-          3,
-          null,
-          null
-        ]
-      },
       "/home/circleci/project/app/admin/admin_users.rb": {
         "lines": [
           1,
@@ -84,43 +38,6 @@
           0,
           null,
           0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/circleci/project/app/admin/dashboard.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           null
@@ -209,13 +126,85 @@
           null
         ]
       },
-      "/home/circleci/project/app/controllers/static_controller.rb": {
+      "/home/circleci/project/app/admin/cities.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/circleci/project/app/models/city.rb": {
         "lines": [
           1,
           1,
           null,
           null,
           1,
+          5,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null
+        ]
+      },
+      "/home/circleci/project/app/admin/dashboard.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -310,26 +299,18 @@
           null
         ]
       },
-      "/home/circleci/project/app/models/dice_job.rb": {
+      "/home/circleci/project/app/controllers/static_controller.rb": {
         "lines": [
-          0,
-          0,
-          0,
+          1,
+          1,
           null,
-          0,
           null,
-          0,
-          0,
+          1,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null
+        ]
       }
     },
-    "timestamp": 1603800582
+    "timestamp": 1603801418
   }
 }
