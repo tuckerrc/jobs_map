@@ -3,6 +3,9 @@ require 'simplecov_small_badge'
 
 SimpleCov.start do
   load_profile 'rails'
+  add_filter do |source_file|
+    source_file.lines.count < 5
+  end
   SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([
     SimpleCov::Formatter::HTMLFormatter,
     SimpleCovSmallBadge::Formatter
