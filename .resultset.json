@@ -53,26 +53,24 @@
           2,
           2,
           2,
-          279,
+          300,
           0,
           null,
-          279,
-          279,
+          300,
+          300,
           null,
-          279,
+          300,
           null,
-          279,
-          279,
-          279,
-          279,
-          279,
-          279,
-          45,
-          null,
-          null,
-          279,
+          300,
+          300,
+          300,
+          300,
+          300,
+          300,
+          47,
           null,
           null,
+          300,
           null,
           null,
           null,
@@ -85,43 +83,13 @@
           null,
           null,
           null,
-          279,
+          null,
+          null,
+          300,
           null,
           null,
           2,
           2,
-          null,
-          null
-        ]
-      },
-      "/home/circleci/project/app/admin/admin_users.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
           null,
           null
         ]
@@ -163,11 +131,11 @@
           null,
           null,
           1,
-          539,
+          584,
           null,
           null,
           1,
-          280,
+          301,
           null,
           null
         ]
@@ -205,6 +173,64 @@
           null,
           null,
           null,
+          null,
+          null
+        ]
+      },
+      "/home/circleci/project/app/admin/admin_users.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/circleci/project/app/controllers/static_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/circleci/project/app/controllers/zzhealth_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
           null,
           null
         ]
@@ -298,19 +324,8 @@
           null,
           null
         ]
-      },
-      "/home/circleci/project/app/controllers/static_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1603849070
+    "timestamp": 1608402087
   }
 }
